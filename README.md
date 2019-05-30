@@ -2,7 +2,19 @@
 
 A minimal theme forked from the oh-my-fish/theme-cbjohnson theme with elegant vi-mode indicator.
 
-Install with [fisher](https://github.com/jorgebucaran/fisher) using command `fisher add znculee/fish-theme-xtli`.
+**Install** with [fisher](https://github.com/jorgebucaran/fisher) using command `fisher add znculee/fish-theme-xtli`.
+
+![demo](screenshots/demo.png)
+
+## Features
+
+- Automatically changing mode according to the terminal width.
+- Display git information.
+- Display conda information.
+- Display username, hostname and current path.
+- Fast, clear, simple and extensible.
+- Comfort with solarized dark.
+- Vi mode indicator.
 
 ## Troubleshooting
 
