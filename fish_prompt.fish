@@ -19,13 +19,11 @@ function fish_prompt
   set -l normal (set_color normal)
   set -l cyan (set_color cyan)
   set -l yellow (set_color yellow)
-  set -l bpurple (set_color -o purple)
+  set -l bblack (set_color -o black)
   set -l bred (set_color -o red)
-  set -l bcyan (set_color -o cyan)
-  set -l bwhite (set_color -o white)
 
   # Color prompt char red for non-zero exit status
-  set -l pcolor $bpurple
+  set -l pcolor $bblack
   if [ $last_status -ne 0 ]
     set pcolor $bred
   end
@@ -36,17 +34,17 @@ function fish_prompt
 
   # Top
   set fish_prompt_pwd_dir_length 0
-  set -l prompt_columns (printf '%s%s at %s in %s%s' $CONDA_PROMPT_MODIFIER $USER $__fish_prompt_hostname (prompt_pwd) (__fish_git_prompt) | wc -c)
+  set -l prompt_columns (printf '%s%s @ %s: %s%s' $CONDA_PROMPT_MODIFIER $USER $__fish_prompt_hostname (prompt_pwd) (__fish_git_prompt) | wc -c)
   if test $prompt_columns -lt $COLUMNS
-    echo -n $cyan$USER$normal at $yellow$__fish_prompt_hostname$normal in $bred(prompt_pwd)$normal
+    echo -n $cyan$USER$normal @ $yellow$__fish_prompt_hostname$normal: $bred(prompt_pwd)$normal
     set -g __fish_git_prompt_showcolorhints true
     __fish_git_prompt
     echo
   else
     set fish_prompt_pwd_dir_length 1
-    set -l prompt_columns (printf '%s%s at %s in %s%s' $CONDA_PROMPT_MODIFIER $USER $__fish_prompt_hostname (prompt_pwd) (__fish_git_prompt) | wc -c)
+    set -l prompt_columns (printf '%s%s @ %s: %s%s' $CONDA_PROMPT_MODIFIER $USER $__fish_prompt_hostname (prompt_pwd) (__fish_git_prompt) | wc -c)
     if test $prompt_columns -lt $COLUMNS
-      echo -n $cyan$USER$normal at $yellow$__fish_prompt_hostname$normal in $bred(prompt_pwd)$normal
+      echo -n $cyan$USER$normal @ $yellow$__fish_prompt_hostname$normal: $bred(prompt_pwd)$normal
       set -g __fish_git_prompt_showcolorhints true
       __fish_git_prompt
       echo
@@ -66,13 +64,13 @@ function fish_prompt
     or test "$fish_key_bindings" = "fish_hybrid_key_bindings"
     switch $fish_bind_mode
       case default
-        set_color --bold red
+        set_color --bold brred
         echo -n '[N]'
       case insert
-        set_color --bold green
+        set_color --bold brblack
         echo -n '[I]'
       case replace_one
-        set_color --bold green
+        set_color --bold brgreen
         echo -n '[R]'
       case visual
         set_color --bold brmagenta

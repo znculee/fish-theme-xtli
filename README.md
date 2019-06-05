@@ -4,7 +4,7 @@ A minimal theme forked from the oh-my-fish/theme-cbjohnson theme with elegant vi
 
 **Install** with [fisher](https://github.com/jorgebucaran/fisher) using command `fisher add znculee/fish-theme-xtli`.
 
-![demo](screenshots/demo.png)
+![demo](demo.png)
 
 ## Features
 
