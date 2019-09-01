@@ -13,7 +13,7 @@ A minimal theme forked from the oh-my-fish/theme-cbjohnson theme with elegant vi
 - Display conda information.
 - Display username, hostname and current path.
 - Fast, clear, simple and extensible.
-- Comfort with solarized dark.
+- Comfort with gruvbox dark.
 - Vi mode indicator.
 
 ## Troubleshooting
